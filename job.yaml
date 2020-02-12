@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: helm-client-job
+spec:
+  template:
+    spec:
+      serviceAccountName: razeedeploy-sa
+      containers:
+      - name: helm-client-job
+        image: bsaran19/helm3:1.0
+        imagePullPolicy: Always
+        command: ["helm"]
+        args: ["install", "test", "stable/nginx-ingress", "-n", "saran"]
+      restartPolicy: Never
