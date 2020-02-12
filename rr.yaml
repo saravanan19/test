@@ -1,0 +1,10 @@
+apiVersion: "deploy.razee.io/v1alpha2"
+  kind: RemoteResource
+  metadata:
+    name: nginx-test
+    labels:
+      razee/watch-resource: "debug"
+    spec:
+      requests:
+      - options:
+          url: https://raw.githubusercontent.com/saravanan19/test/master/job.yaml
